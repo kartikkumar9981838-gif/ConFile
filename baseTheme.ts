@@ -1,0 +1,71 @@
+export const BASE_THEME_XML = `<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr' xmlns:svg='http://www.w3.org/2000/svg'>
+  <head>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <title><data:view.title.escaped/></title>
+    
+    <b:skin><![CDATA[
+      /* Real blogger theme default styling */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: #0c0c16;
+        color: #ffffff;
+      }
+      .widget-content {
+        padding: 0;
+        margin: 0;
+      }
+      .confile-multipage-container {
+        width: 100%;
+        margin: 0 auto;
+      }
+    ]]></b:skin>
+    <b:include data='blog' name='google-analytics'/>
+  </head>
+  <body expr:class='data:blog.pageType'>
+    <b:class cond='data:view.isHomepage' name='home'/>
+    <b:class cond='data:view.isPage' name='item'/>
+    <b:class cond='data:view.isArchive' name='index'/>
+    <b:class cond='data:view.isError' name='error404'/>
+
+    <!-- Header Section -->
+    <b:section id='header' showaddelement='no'>
+      <b:widget id='Header1' locked='true' title='Header' type='Header' version='2' visible='true'>
+        <b:includable id='main'>
+          <div class='confile-header-inner' style='display: none;'>
+            <h1><data:blog.title/></h1>
+            <p><data:blog.description/></p>
+          </div>
+        </b:includable>
+      </b:widget>
+    </b:section>
+
+    <!-- Main Content Section -->
+    <b:section id='main' showaddelement='yes'>
+      <b:widget id='HTML1' locked='false' title='Find out more about what we do' type='HTML' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[__CONFILE_INJECT_CONTENT__]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+          <div class='widget-content'>
+            <data:content/>
+          </div>
+        </b:includable>
+      </b:widget>
+    </b:section>
+
+    <!-- Footer Section -->
+    <b:section id='footer' showaddelement='yes'>
+      <b:widget id='Footer1' locked='false' title='Footer' type='Footer' version='2' visible='true'>
+        <b:includable id='main'>
+          <div class='confile-footer-inner' style='display: none;'>
+            <p>Theme Powered by ConFile &amp; Blogger © <data:blog.title/></p>
+          </div>
+        </b:includable>
+      </b:widget>
+    </b:section>
+  </body>
+</html>`;

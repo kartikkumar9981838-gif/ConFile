@@ -1,0 +1,6 @@
+{
+  "name": "ConFile",
+  "description": "Convert static HTML, CSS, and JS web templates into fully Blogger-compatible theme XML files using interactive analysis and Gemini API code optimization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
